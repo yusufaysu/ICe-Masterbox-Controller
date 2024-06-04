@@ -16,10 +16,7 @@
             <form id="lightForm">
                 <label for="numLights">Kaç adet aydınlatma olacak?</label>
                 <input type="number" id="numLights" name="numLights" min="1" required />
-
                 <div id="lightInputs"></div>
-
-                <button type="submit">Ekle</button>
             </form>
         </section>
         <section>
@@ -27,12 +24,31 @@
             <form id="shutterForm">
                 <label for="numShutters">Kaç adet panjur olacak?</label>
                 <input type="number" id="numShutters" name="numShutters" min="1" required />
-
                 <div id="shutterInputs"></div>
-
-                <button type="submit">Ekle</button>
             </form>
         </section>
+        <section>
+            <h2>Kontroller</h2>
+            <form id="controlForm">
+                <label><input type="checkbox" name="controls" value="su_vanasi"> Su Vanası</label>
+                <label><input type="checkbox" name="controls" value="sicak_su_vanasi"> Sıcak Su Vanası</label>
+                <label><input type="checkbox" name="controls" value="soguk_su_vanasi"> Soğuk Su Vanası</label>
+                <label><input type="checkbox" name="controls" value="gaz_vanasi"> Gaz Vanası</label>
+                <label><input type="checkbox" name="controls" value="elektrik_kes"> Elektrik Kes (Kontaktör)</label>
+                <label><input type="checkbox" name="controls" value="kapi_kilidi"> Kapı Kilidi</label>
+            </form>
+        </section>
+        <section>
+            <h2>Güvenlik</h2>
+            <form id="securityForm">
+                <label><input type="checkbox" name="security" value="gaz_sensoru"> Gaz Sensörü</label>
+                <label><input type="checkbox" name="security" value="duman_sensoru"> Duman Sensörü</label>
+                <label><input type="checkbox" name="security" value="su_baskin_sensoru"> Su Baskın Sensörü</label>
+                <label><input type="checkbox" name="security" value="pir_dedektoru"> Pır Dedektörü</label>
+                <label><input type="checkbox" name="security" value="kapi_manyetik_sensor"> Kapı Manyetik Sensörü</label>
+            </form>
+        </section>
+        <button id="submitBtn">Ekle</button>
     </main>
     <script src="script.js"></script>
 </body>

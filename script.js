@@ -45,23 +45,6 @@ document.getElementById('numLights').addEventListener('input', function() {
     }
 });
 
-document.getElementById('lightForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const numLights = document.getElementById('numLights').value;
-    const lights = [];
-    for (let i = 0; i < numLights; i++) {
-        const lightName = document.querySelector(`input[name="lightName${i + 1}"]`).value;
-        const switchType = document.querySelector(`select[name="switchType${i + 1}"]`).value;
-        lights.push({ name: lightName, type: switchType });
-    }
-    
-    console.log(`Kaç tane ışık: ${numLights}`);
-    console.log('Aydınlatmalar:', lights);
-    
-    // config.json işi burada başlar 
-});
-
 document.getElementById('numShutters').addEventListener('input', function() {
     const numShutters = document.getElementById('numShutters').value;
     const shutterInputs = document.getElementById('shutterInputs');
@@ -109,9 +92,17 @@ document.getElementById('numShutters').addEventListener('input', function() {
     }
 });
 
-document.getElementById('shutterForm').addEventListener('submit', function(event) {
+document.getElementById('submitBtn').addEventListener('click', function(event) {
     event.preventDefault();
-    
+
+    const numLights = document.getElementById('numLights').value;
+    const lights = [];
+    for (let i = 0; i < numLights; i++) {
+        const lightName = document.querySelector(`input[name="lightName${i + 1}"]`).value;
+        const switchType = document.querySelector(`select[name="switchType${i + 1}"]`).value;
+        lights.push({ name: lightName, type: switchType });
+    }
+
     const numShutters = document.getElementById('numShutters').value;
     const shutters = [];
     for (let i = 0; i < numShutters; i++) {
@@ -119,10 +110,23 @@ document.getElementById('shutterForm').addEventListener('submit', function(event
         const switchType = document.querySelector(`select[name="shutterSwitchType${i + 1}"]`).value;
         shutters.push({ name: shutterName, type: switchType });
     }
-    
-    // Örnek çıktı
+
+    const controls = [];
+    document.querySelectorAll('input[name="controls"]:checked').forEach(control => {
+        controls.push(control.value);
+    });
+
+    const security = [];
+    document.querySelectorAll('input[name="security"]:checked').forEach(sensor => {
+        security.push(sensor.value);
+    });
+
+    console.log(`Kaç tane ışık: ${numLights}`);
+    console.log('Aydınlatmalar:', lights);
     console.log(`Kaç tane panjur: ${numShutters}`);
     console.log('Panjurlar:', shutters);
-    
-    // config.json işi burada başlar 
+    console.log('Kontroller:', controls);
+    console.log('Güvenlik:', security);
+
+    // config.json olayı burada başlar
 });
