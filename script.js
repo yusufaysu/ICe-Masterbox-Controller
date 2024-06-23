@@ -121,9 +121,7 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
         security.push(sensor.value);
     });
 
-    console.log(`Kaç tane ışık: ${numLights}`);
     console.log('Aydınlatmalar:', lights);
-    console.log(`Kaç tane panjur: ${numShutters}`);
     console.log('Panjurlar:', shutters);
     console.log('Kontroller:', controls);
     console.log('Güvenlik:', security);
